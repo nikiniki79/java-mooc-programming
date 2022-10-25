@@ -3,12 +3,12 @@ public class Apartment {
 
     private int rooms;
     private int squares;
-    private int princePerSquare;
+    private int pricePerSquare;
 
     public Apartment(int rooms, int squares, int pricePerSquare) {
         this.rooms = rooms;
         this.squares = squares;
-        this.princePerSquare = pricePerSquare;
+        this.pricePerSquare = pricePerSquare;
     }
 
     public boolean largerThan(Apartment compared) {
@@ -20,10 +20,17 @@ public class Apartment {
     }
 
     public int priceDifference(Apartment compared) {
-        if ((this.princePerSquare * this.squares) > (compared.princePerSquare * compared.squares)) {
-            return (this.princePerSquare * this.squares) - (compared.princePerSquare * compared.squares);
+        if ((this.pricePerSquare * this.squares) > (compared.pricePerSquare * compared.squares)) {
+            return (this.pricePerSquare * this.squares) - (compared.pricePerSquare * compared.squares);
         }
-        return princePerSquare;
+        return (compared.pricePerSquare * compared.squares) - (this.pricePerSquare * this.squares);
+    }
+
+    public boolean moreExpensiveThan(Apartment compared) {
+        if (this.pricePerSquare * this.squares > compared.pricePerSquare * compared.squares) {
+            return true;
+        }
+        return false;
     }
 
 }
