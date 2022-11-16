@@ -1,9 +1,6 @@
-
 public class Main {
-
     public static void main(String[] args) {
 
-        // Try out your class here
         SimpleCollection j = new SimpleCollection("characters");
         System.out.println(j);        
         
@@ -21,7 +18,5 @@ public class Main {
         
         j.add("phoenix");
         System.out.println(j);
-        
-        
     }
 }
